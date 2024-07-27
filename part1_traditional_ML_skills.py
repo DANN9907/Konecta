@@ -18,6 +18,8 @@ class ML_skills():
             case 'nulls':
                 print(self.data.isnull().sum())
 
+    def data_clean(self, '')
+
 a = ML_skills('train.csv')
 a.data_exp('nulls')
 
