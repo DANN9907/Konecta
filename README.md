@@ -55,16 +55,14 @@ pip install -r requirements.txt
 
 ## Project Structure
 
-\`\`\`
 .
-├── data/                    # Folder containing the data files
-├── scripts/                 # Folder containing the Python scripts
-│   ├── part1_traditional_ML_skills.py  # Main script with ML skills
-│   └── ...                  # Other scripts
-├── requirements.txt         # Python packages required
-├── README.md                # This README file
-└── ...                      # Other project files
-\`\`\`
+├── data/          # Folder containing the data files
+├── scripts/         # Folder containing the Python scripts
+│  ├── part1_traditional_ML_skills.py # Main script with ML skills
+│  └── ...         # Other scripts
+├── requirements.txt     # Python packages required
+├── README.md        # This README file
+└── ...           # Other project files
 
 ## Methods
 
