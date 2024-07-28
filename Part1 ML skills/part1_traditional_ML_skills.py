@@ -157,8 +157,8 @@ class ML_skills():
         val_pred = self.model_lg.predict(X_test)
         train_acc = self.pred_acc(y_train, train_pred)
         val_acc = self.pred_acc(y_test, val_pred)
-        # print('Training Accuracy forest = {:.4f} %'.format(train_acc))
-        # print('Validation Accuracy forest = {:.4f} %'.format(val_acc))
+        print('Training Accuracy forest = {:.4f} %'.format(train_acc))
+        print('Validation Accuracy forest = {:.4f} %'.format(val_acc))
         return val_acc
 
     def svc(self, X_train: np.ndarray, X_test: np.ndarray, y_train: np.ndarray, y_test: np.ndarray):
@@ -181,8 +181,8 @@ class ML_skills():
         val_pred = self.model_svc.predict(X_test)
         train_acc = self.pred_acc(y_train, train_pred)
         val_acc = self.pred_acc(y_test, val_pred)
-        # print('Training Accuracy forest = {:.4f} %'.format(train_acc))
-        # print('Validation Accuracy forest = {:.4f} %'.format(val_acc))
+        print('Training Accuracy forest = {:.4f} %'.format(train_acc))
+        print('Validation Accuracy forest = {:.4f} %'.format(val_acc))
         return val_acc
 
     def decision_tree(self, X_train: np.ndarray, X_test: np.ndarray, y_train: np.ndarray, y_test: np.ndarray):
@@ -205,8 +205,8 @@ class ML_skills():
         val_pred = self.model_dt.predict(X_test)
         train_acc = self.pred_acc(y_train, train_pred)
         val_acc = self.pred_acc(y_test, val_pred)
-        # print('Training Accuracy forest = {:.4f} %'.format(train_acc))
-        # print('Validation Accuracy forest = {:.4f} %'.format(val_acc))
+        print('Training Accuracy forest = {:.4f} %'.format(train_acc))
+        print('Validation Accuracy forest = {:.4f} %'.format(val_acc))
         return val_acc
 
     def random_forest(self, X_train: np.ndarray, X_test: np.ndarray, y_train: np.ndarray, y_test: np.ndarray):
@@ -229,8 +229,8 @@ class ML_skills():
         val_pred = self.model_rf.predict(X_test)
         train_acc = self.pred_acc(y_train, train_pred)
         val_acc = self.pred_acc(y_test, val_pred)
-        # print('Training Accuracy forest = {:.4f} %'.format(train_acc))
-        # print('Validation Accuracy forest = {:.4f} %'.format(val_acc))
+        print('Training Accuracy forest = {:.4f} %'.format(train_acc))
+        print('Validation Accuracy forest = {:.4f} %'.format(val_acc))
         return val_acc
 
     def MLP(self, X_train: np.ndarray, X_val: np.ndarray, y_train, y_val: np.ndarray):
@@ -266,7 +266,7 @@ class ML_skills():
         self.model_mlp.fit(X_train, y_train, epochs=10, batch_size=32, validation_data=(X_val, y_val))
 
         results = self.model_mlp.evaluate(X_val, y_val)
-        # print("test loss, test acc:", results)
+        print("test loss, test acc:", results)
         return results[1]
 
 
@@ -281,17 +281,17 @@ inference = ml.data_treatment(inference, 'drop_c', ['id', 'CustomerId', 'Surname
 
 X_train, X_val, y_train, y_val = ml.train_test_split(data)
 
-#ml.importances(X_train, y_train)
+ml.importances(X_train, y_train)
 
-# acc1 = ml.logistic_regression(X_train, X_val, y_train, y_val)
-# acc2 = ml.decision_tree(X_train, X_val, y_train, y_val)
+acc1 = ml.logistic_regression(X_train, X_val, y_train, y_val)
+acc2 = ml.decision_tree(X_train, X_val, y_train, y_val)
 acc3 = ml.random_forest(X_train, X_val, y_train, y_val)
-# acc4 = ml.MLP(X_train, X_val, y_train, y_val)
+acc4 = ml.MLP(X_train, X_val, y_train, y_val)
 
-# print(f'Accuracy logistic regression: {acc1}')
-# print(f'Accuracy decision tree: {acc2}')
+print(f'Accuracy logistic regression: {acc1}')
+print(f'Accuracy decision tree: {acc2}')
 print(f'Accuracy random forest: {acc3}')
-# print(f'Accuracy MLP: {acc4}')
+print(f'Accuracy MLP: {acc4}')
 
 predictions = ml.model_rf.predict(inference)
 inference = pd.read_csv('inference.csv')
