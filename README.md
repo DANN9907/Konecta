@@ -10,4 +10,6 @@ In this repository you will find two tests:
 2. **Part 2: Generative AI skills**
    - This contains a script with several methods for word extraction, splitting the extracted data into smaller chunks, generating a vector store, and setting up a conversational retrieval chain.
    - It also includes a script to design a small interface with CSS.
+   - Additionally, there is a `.doc` file with the answers to the questions asked in the technical test.
+
 
