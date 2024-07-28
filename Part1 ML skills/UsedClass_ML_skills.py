@@ -32,6 +32,14 @@ print(f'Accuracy random forest: {acc3}')
 print(f'Accuracy MLP: {acc4}')
 
 # ---------Predictions on inference and add new column with the predictions------------- #
+"""
+We chose to use Random Forest because it offers greater accuracy and robustness compared to 
+Decision Tree, Logistic Regression, and MLP Neural Networks. Random Forest reduces overfitting
+by averaging multiple decision trees, leading to better generalization. Unlike Decision Trees, 
+which can overfit easily, Logistic Regression, which struggles with complex non-linear relationships, 
+and MLP Neural Networks, which require extensive data and training time, Random Forest handles noisy 
+features effectively and works well with both categorical and continuous data.
+"""
 predictions = ml.model_rf.predict(inference)
 inference = pd.read_csv('inference.csv')
 inference['Churn'] = predictions
