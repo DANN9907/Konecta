@@ -82,9 +82,6 @@ pip install -r requirements.txt
 - `train_model(X_train: pd.DataFrame, y_train: pd.Series)`
   - Trains a Random Forest classifier.
 
-- `predict_and_add_column(new_data: pd.DataFrame, column_name: str) -> pd.DataFrame`
-  - Predicts and adds a new column with the predictions to the given DataFrame.
-
 ## Contributing
 
 Contributions are welcome! Please submit a pull request or open an issue to discuss your ideas.
