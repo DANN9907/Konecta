@@ -1,12 +1,14 @@
 from Class_ML_skills import ML_skills
+import pandas as pd
 
 ml = ML_skills()
-data, inference = ml.open_csv('train.csv', 'inference.csv')
+data, inference = ml.open_csv('Part1 ML skills\\train.csv', 'Part1 ML skills\\inference.csv')
 
 data = ml.data_treatment(data, 'encoding')
 inference = ml.data_treatment(inference, 'encoding')
 
 data = ml.data_treatment(data, 'drop_c', ['id', 'CustomerId', 'Surname', 'Geography'])
+ml.data_exploration(data)
 inference = ml.data_treatment(inference, 'drop_c', ['id', 'CustomerId', 'Surname', 'Geography'])
 
 X_train, X_val, y_train, y_val = ml.train_test_split(data)

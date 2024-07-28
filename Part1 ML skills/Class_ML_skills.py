@@ -1,18 +1,16 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from typing import Literal
 import pandas as pd
-import seaborn as sns
+import matplotlib.ticker as mtick
+from typing import Literal
 from pandas import DataFrame
 from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import RandomForestClassifier 
 from sklearn import metrics
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import precision_score
 from sklearn.svm import SVC
 from sklearn.tree import DecisionTreeClassifier
-import tensorflow as tf
 from tensorflow.keras.regularizers import l2
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.models import Sequential
@@ -60,6 +58,65 @@ class ML_skills():
                 print(data.info())
             case 'nulls':
                 print(data.isnull().sum())
+        
+    def data_exploration(self, data: DataFrame):
+        colors = ["#808000", '#000080']
+
+        ax = (data['Churn'].value_counts()*100/len(data)).plot(kind='bar', rot = 0, color=colors, width= .5)
+
+        ax.yaxis.set_major_formatter(mtick.PercentFormatter())
+        ax.set_xticklabels(['Stayed', 'Churned'])
+        ax.set_title("Customers by Churn")
+        ax.set_ylabel('% customers')
+
+        for p in ax.patches: 
+            w, h = p.get_width(), p.get_height()
+            x,y = p.get_xy()
+            ax.annotate('{:.1f}%'.format(h), (x+w/4, h/2), color = 'white', weight = 'bold', size = 14)
+        plt.show()
+
+        ax = data['Gender'].value_counts().plot(kind='bar', rot = 0, color = colors)
+
+        ax.set_title("Gender Distribution")
+        ax.set_ylabel("Customer Count")
+        ax.set_xlabel("Gender")
+
+        for p in ax.patches: 
+            w, h = p.get_width(), p.get_height()
+            x,y = p.get_xy()
+            temp = np.array((h*100/len(data)))
+            anot = str(temp)
+            ax.annotate(anot + '%', (x+w/4-.04, h/2), color = 'white', weight = 'bold', size = 14)
+        plt.show()
+
+        gender_churn = data.groupby(['Gender', 'Churn']).size().unstack()
+
+        ax = gender_churn.plot(kind='bar', stacked=True, color = colors, rot = 0)
+        ax.legend(labels = (['Stayed', 'Churned']))
+        ax.set_title('Gender Distribution and Churn rate')
+        ax.set_ylabel('customer count')
+
+        for p in ax.patches: 
+            w, h = p.get_width(), p.get_height()
+            x,y = p.get_xy()
+            if x == -0.25:
+                gender_sum = gender_churn.T.sum()[0]
+            else: 
+                gender_sum = gender_churn.T.sum()[1]
+            
+            temp = np.array(round(h*100/gender_sum, 2))
+            anot = str(temp)
+            ax.annotate(anot + '%', (x+0.15, y+h/2), color = 'white', weight = 'bold', size = 10)
+
+        tenure_churn = data.groupby(['Tenure', 'Churn'])['Tenure'].size().unstack()
+
+        tenure_churn['churn_rate'] = tenure_churn[1]/tenure_churn.T.sum()
+
+        ax = tenure_churn['churn_rate'].plot(kind = 'line')
+        ax.set_title('Churn Rate based on Tenure')
+        ax.set_xlabel('Tenure (years)')
+        ax.set_ylabel('Churn Rate')
+        plt.show()
 
     def data_treatment(self, data: DataFrame, method: Literal['drop_c', 'delete_null', 'encoding', 'transform'], drop_c: list=None):
         """
