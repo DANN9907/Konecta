@@ -70,6 +70,9 @@ pip install -r requirements.txt
 
 - `open_csv(path_df: str, path_inference: str) -> tuple[pd.DataFrame, pd.DataFrame]`
   - Opens CSV files for training and inference data.
+    
+- `data_exploration(data: DataFrame):`
+  - Perform data exploration and visualization on the provided DataFrame.
 
 - `data_treatment(data: pd.DataFrame, method: str, drop_c: list = None) -> pd.DataFrame`
   - Cleans and preprocesses the data based on the specified method.
