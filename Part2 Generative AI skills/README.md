@@ -1,7 +1,7 @@
 
 # Langchain Chatbot for Bruno_child_offers PDFs
 
-This chatbot is crafted to respond to inquiries regarding the Bruno_child_offers PDF, utilizing Hugging Face LLM models.
+This chatbot is crafted to respond to inquiries regarding the Bruno_child_offers PDF, utilizing OpenAI LLM models.
 
 ## Objective
 
