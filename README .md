@@ -53,7 +53,7 @@ The notebook is organized into several key sections:
 Here are some example queries demonstrated in the notebook:
 
 - "¿Que colonias tienes de Disney?"
-- "¿Cual es la religión más practicada en Colombia?"
+- "¿Cual es la religión más practican en Colombia?"
 - "¿Hay alguna colonia o producto que sea dermatológicamente probado?"
 - "¿Qué venden en la última página del PDF?"
 
