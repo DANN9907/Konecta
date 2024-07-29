@@ -60,6 +60,37 @@ class ML_skills():
                 print(data.isnull().sum())
         
     def data_exploration(self, data: DataFrame):
+        """
+        Perform data exploration and visualization on the provided DataFrame.
+
+        This method generates and displays several plots to explore the dataset,
+        focusing on customer churn, gender distribution, gender-based churn rate,
+        and churn rate based on tenure. The visualizations include bar charts and
+        line charts with annotations for better interpretability.
+
+        Parameters:
+        data (DataFrame): The input DataFrame containing customer data with columns
+                        'Churn', 'Gender', and 'Tenure'.
+
+        Visualizations:
+        1. Customers by Churn:
+        - Bar chart showing the percentage of customers who stayed vs. churned.
+        - The bars are annotated with the percentage values.
+
+        2. Gender Distribution:
+        - Bar chart showing the distribution of customers by gender.
+        - The bars are annotated with the percentage values.
+
+        3. Gender Distribution and Churn rate:
+        - Stacked bar chart showing the gender distribution and churn rate.
+        - The bars are annotated with the percentage values of churned and stayed customers.
+
+        4. Churn Rate based on Tenure:
+        - Line chart showing the churn rate as a function of tenure (years).
+
+        Returns:
+        None
+        """
         colors = ["#808000", '#000080']
 
         ax = (data['Churn'].value_counts()*100/len(data)).plot(kind='bar', rot = 0, color=colors, width= .5)
