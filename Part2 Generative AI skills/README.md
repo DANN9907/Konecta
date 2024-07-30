@@ -1,5 +1,5 @@
 
-# Part 2 Generative ai skills.ipynb
+# Part 2 Generative AI skills.ipynb
 
 ## Overview
 
