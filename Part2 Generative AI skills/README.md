@@ -1,5 +1,5 @@
 
-# README for Jupyter Notebook: Part_2_Generative_ai_skills.ipynb
+# Part 2 Generative ai skills.ipynb
 
 ## Overview
 
