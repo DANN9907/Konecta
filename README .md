@@ -57,10 +57,6 @@ Here are some example queries demonstrated in the notebook:
 - "¿Hay alguna colonia o producto que sea dermatológicamente probado?"
 - "¿Qué venden en la última página del PDF?"
 
-## Conclusion
-
-This notebook is a comprehensive guide to using generative AI for document analysis and querying. By following the setup and examples provided, users can adapt the notebook to various document types and query requirements, enhancing their ability to extract meaningful information using AI.
-
 ## Dependencies
 
 - `openai`
