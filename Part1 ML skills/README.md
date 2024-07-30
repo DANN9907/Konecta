@@ -6,7 +6,6 @@ This repository contains the first part of the Machine Learning skills assessmen
 ## Table of Contents
 
 - [Introduction](#introduction)
-- [Installation](#installation)
 - [Usage](#usage)
 - [Project Structure](#project-structure)
 - [Methods](#methods)
@@ -16,16 +15,6 @@ This repository contains the first part of the Machine Learning skills assessmen
 ## Introduction
 
 This project demonstrates basic Machine Learning skills, focusing on data preprocessing, model training, and inference using Python and popular ML libraries like pandas and scikit-learn.
-
-## Installation
-
-To use this project, clone the repository and install the necessary dependencies:
-
-\`\`\`bash
-git clone https://github.com/DANN9907/Konecta.git
-cd Konecta/Part1%20ML%20skills
-pip install -r requirements.txt
-\`\`\`
 
 ## Usage
 
