@@ -50,12 +50,16 @@ The notebook is organized into several key sections:
 
 ## Example Queries
 
-Here are some example queries demonstrated in the notebook:
+Here are some example queries and answers demonstrated in the notebook:
 
 - "¿Que colonias tienes de Disney?"
+ - R: Tenemos disponibles las colonias Disney Minnie Mouse y Disney Princesa en presentaciones de 150 ml cada una. La Colonia Minnie Mouse tiene un precio regular de $18.900 y la Colonia Disney Princesa tiene un precio regular de      $25.900. Ambas colonias son dermatológicamente probadas y están libres de parabenos.
 - "¿Cual es la religión más practican en Colombia?"
+ - R: Lo siento, pero no tengo información sobre la religión más practicada en Colombia en el contenido del PDF proporcionado. ¿Tienes alguna otra pregunta relacionada con el archivo?
 - "¿Hay alguna colonia o producto que sea dermatológicamente probado?"
+ - R: Sí, la Colonia Minnie Mouse de Disney y la Colonia Barbie Spray Desenredante Barbie son productos que han sido dermatológicamente probados, según se indica en el archivo PDF proporcionado.
 - "¿Qué venden en la última página del PDF?"
+ - R: En la última página del PDF se encuentra la oferta de un gel para el cabello Spider-Man de Marvel de 100 g, con un precio regular de $24.990 y un descuento especial a $13.900. Este producto ha sido dermatológicamente probado y está basado en estudios técnicos realizados.
 
 ## Dependencies
 
